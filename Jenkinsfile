@@ -46,22 +46,22 @@ pipeline {
     }
     post {
         success {
-            mail to: 'pahul12122003@gmail.com',
+            mail to: 'emailaddress',
                 subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - SUCCESS",
                 body: "The build was successful. View details at ${env.BUILD_URL}."
         }
         failure {
-            mail to: 'pahul12122003@gmail.com',
+            mail to: 'emailaddress',
                 subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - FAILURE",
                 body: "The build failed. Check details at ${env.BUILD_URL} to resolve issues."
         }
         unstable {
-            mail to: 'pahul1212003@gmail.com',
+            mail to: 'emailaddress',
                 subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - UNSTABLE",
                 body: "The build is unstable. Investigate issues at ${env.BUILD_URL}."
         }
         changed {
-            mail to: 'pahul1212003@gmail.com',
+            mail to: 'emailaddress',
                 subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - CHANGED",
                 body: "Build status has changed. Refer to ${env.BUILD_URL} for further information."
         }
