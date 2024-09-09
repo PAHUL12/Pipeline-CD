@@ -47,7 +47,7 @@ pipeline {
     post {
         success {
             mail to: '',
-                subject: "${env.JOild #${env.BUILD_NUMBER} - SUCCESS",
+                subject: "${env.JOB_NAME} - Build #${env.BUILD_NUMBER} - SUCCESS",
                 body: "The build was successful. View details at ${env.BUILD_URL}."
         }
         failure {
